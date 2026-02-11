@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://lucide.dev/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OPR Sekolah AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Noto Serif', 'serif'],
+            },
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                900: '#1e3a8a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @media print {
+        @page {
+          size: A4 portrait;
+          margin: 0;
+        }
+        body {
+          background: white;
+          margin: 0;
+          padding: 0;
+        }
+        
+        /* Hide everything by default */
+        body * {
+          visibility: hidden;
+        }
+        
+        /* Show only the printable area */
+        #printable-area, #printable-area * {
+          visibility: visible;
+        }
+        
+        /* Position the printable area at the top-left */
+        #printable-area {
+          position: absolute !important;
+          left: 0 !important;
+          top: 0 !important;
+          width: 210mm !important; /* Force A4 width */
+          margin: 0 !important;
+          padding: 0 !important;
+          transform: none !important; /* Reset any scaling */
+        }
+        
+        /* Ensure background graphics (colors) are printed */
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+      }
+      
+      /* A4 Paper Simulation */
+      .a4-paper {
+        width: 210mm;
+        min-height: 297mm;
+        margin: auto;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      @media print {
+        .a4-paper {
+          box-shadow: none;
+          margin: 0;
+          width: 100%;
+          min-height: 297mm;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 text-slate-800">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
